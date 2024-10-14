@@ -1,0 +1,22 @@
+[package]
+name = "stm3"
+version = "0.2.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+is31fl3741 = { path = "../../", features = [ "adafruit_rgb_13x9", "embedded_graphics" ] }
+embedded-hal = "0.2.7"
+cortex-m-rt = "0.7.3"
+cortex-m = "0.7.7"
+fugit = "0.3.7"
+panic-halt = { version = "0.2.0" }
+stm32g0xx-hal = {version = "0.2.0", features = ["rt", "stm32g071"]}
+tinybmp = "0.5.0"
+embedded-graphics = "0.8.1"
+
+[[example]]
+name = "stm32"
+
+[[example]]
+name = "gaypride"

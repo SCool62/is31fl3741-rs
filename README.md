@@ -35,7 +35,7 @@ is31fl3741 = { version = "0.3.0", features = ["adafruit13x9"] }
 This driver contains optional support for the [embedded-graphics](https://docs.rs/embedded-graphics/latest/embedded_graphics/) library.
 Enable the `embedded_graphics` feature to use it.
 
-The `gaypride` example shows off a use of this.
+The `adafruit_rgb/gaypride` example shows off a use of this.
 
 ## Inspiration
 
