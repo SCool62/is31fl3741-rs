@@ -5,6 +5,7 @@ use crate::{Error, IS31FL3741};
 use core::convert::TryFrom;
 #[allow(unused_imports)]
 use embedded_hal::blocking::delay::DelayMs;
+#[allow(unused_imports)]
 use embedded_hal::blocking::i2c::Read;
 #[allow(unused_imports)]
 use embedded_hal::blocking::i2c::Write;
