@@ -49,4 +49,7 @@ jobs:
               - 'Cargo.lock'
               - '.github/workflows/**'
       - if: steps.changes.outputs.rust == 'true'
-        run: cargo doc
+        run: |
+          cargo doc
+          cargo fmt --all -- --check
+          cargo clippy -- --deny=warnings
