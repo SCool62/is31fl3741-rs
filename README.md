@@ -12,7 +12,6 @@ Driver for [Lumissil Microsystem's IS31FL3741 integrated circuit](https://www.lu
 1. Use of embedded HAL traits (works with any embedded device that supports the required traits). This means that this driver is platform agnostic.
 2. Library features (only turn on what devices you need to save compiled binary space).
 3. [Examples](./examples) on how to use this driver.
-Right now there is only an example on how to use this crate with a stm32 nucleo.
 
 ## Install
 
@@ -23,11 +22,13 @@ is31fl3741 = "0.3.0"
 ```
 
 By default this version will only contain the core driver.
-To use a preconfigured device (currently just [Adafruit IS31FL3741 13x9 PWM RGB LED Matrix](https://www.adafruit.com/product/5201)),
+
+To use a preconfigured device ([Framework LED Matrix](https://frame.work/tw/en/products/16-led-matrix) or [Adafruit 13x9 RGB LED Matrix](https://www.adafruit.com/product/5201)),
 you would need to change this line to include that device:
 
 ```toml
-is31fl3741 = { version = "0.3.0", features = ["adafruit13x9"] }
+is31fl3741 = { version = "0.3.0", features = ["framework_ledmatrix"] }
+is31fl3741 = { version = "0.3.0", features = ["adafruit_rgb_13x9"] }
 ```
 
 ## Graphics

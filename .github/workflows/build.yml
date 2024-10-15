@@ -25,9 +25,16 @@ jobs:
               - '.github/workflows/**'
       - if: steps.changes.outputs.rust == 'true'
         run: |
-          cargo build --target=thumbv6m-none-eabi
-          cd examples/adafruit_rgb
-          cargo build --target=thumbv6m-none-eabi
+          cargo build --target=thumbv6m-none-eabi --all-features
+
+          pushd examples/adafruit_rgb
+          cargo build --target=thumbv6m-none-eabi --examples
+          popd
+
+          cargo install flip-link
+          pushd examples/ledmatrix
+          cargo build --examples
+          popd
 
   rustdoc:
     runs-on: ubuntu-latest
@@ -42,4 +49,7 @@ jobs:
               - 'Cargo.lock'
               - '.github/workflows/**'
       - if: steps.changes.outputs.rust == 'true'
-        run: cargo doc
+        run: |
+          cargo doc
+          cargo fmt --all -- --check
+          cargo clippy -- --deny=warnings
